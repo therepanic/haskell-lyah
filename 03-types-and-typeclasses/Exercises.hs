@@ -1,11 +1,7 @@
 import Data.List (sort)
 -- subexercise 1
 circleArea :: Double -> Double
-circleArea r =
-    let
-        pi = 3.14
-    in
-        pi * r^2
+circleArea r = 3.14 * r^2
 
 -- subexercise 2
 swapPair :: (a, b) -> (b, a)
@@ -35,7 +31,7 @@ allEnumValues = [minBound..maxBound]
 -- subexercise 8
 calcStats :: (Real a, Ord a) => [a] -> (a, Double, a, a)
 calcStats a = let
-    sumA = sum(a)
+    sumA = sum a
     avg  = realToFrac sumA / fromIntegral (length a)
     mn = minimum a
     mx = maximum a
