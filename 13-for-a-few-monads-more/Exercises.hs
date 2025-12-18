@@ -5,6 +5,7 @@ import Control.Monad.Identity
 import Control.Monad.State.Class  (get, put)
 import Control.Monad.Reader.Class (ask)
 import Control.Monad.Writer.Class (tell, MonadWriter)
+import Control.Monad.Writer
 
 -- subexercise 1
 logAdd :: Integer -> Writer [String] Integer
@@ -83,7 +84,7 @@ validateList (x:xs) |
         validateList xs
 
 -- subexercise 10
-process :: [Integer] -> StateT Integer (ReaderT Config (MonadWriter [String] Identity)) Integer
+process :: [Integer] -> StateT Integer (ReaderT Config (WriterT [String] Identity)) Integer
 process [] = return 0
 process a = do
     tell ["start"]
